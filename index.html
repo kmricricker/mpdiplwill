@@ -18,9 +18,8 @@
             height: 100%;
         }
         .jw-button-color {
-  color: white !important; /* The !important tag may be needed to override existing styles */
-}
-
+            color: white !important; /* The !important tag may be needed to override existing styles */
+        }
     </style>
 </head>
 <body>
@@ -29,15 +28,22 @@
     
     <!-- JW Player script -->
     <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
-    <!---DASH Setup-->
+    <!-- DASH Setup -->
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Show the Telegram confirmation dialog on page load
+            if (confirm("Join Our Telegram Channel For Latest Update?")) {
+                window.open("https://t.me/+QRdNAmX47sNkNWFl", '_blank');
+            }
+        });
+
         jwplayer("jwplayerDiv").setup({
             file: "https://streamdog.site/astro/stream.php/linearjitp-playback.astro.com.my/dash-wv/linear/2504/default_ott.mpd",
             drm: {
-                    clearkey: {
-                        keyId: "03c2e0af2f8159f9f0ce9b5dbc865f10",
-                        key: "cd84ed136b0cc71f8ab8cd4d4f6a2e4c"
-                            }
+                clearkey: {
+                    keyId: "03c2e0af2f8159f9f0ce9b5dbc865f10",
+                    key: "cd84ed136b0cc71f8ab8cd4d4f6a2e4c"
+                }
             },
             width: "100%",
             height: "100%",
@@ -74,3 +80,5 @@
             autostart: true
         });
     </script>
+</body>
+</html>
